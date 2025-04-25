@@ -1,4 +1,5 @@
 /* Estilos para mejorar la experiencia de arrastrar y soltar */
+@import "tailwindcss";
 
 /* Efecto de transición suave para las letras */
 [draggable="true"] {
