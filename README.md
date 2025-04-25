@@ -1,47 +1,76 @@
-# Astro Starter Kit: Minimal
+# Juego de Palabras - Guía de instalación y uso
 
-```sh
-npm create astro@latest -- --template minimal
+## Requisitos previos
+- Node.js (versión 16 o superior)
+- npm o yarn
+
+## Pasos de instalación
+
+1. **Crea un nuevo proyecto Astro con integración de Vue y Tailwind**
+
+```bash
+# Usando npm
+npm create astro@latest juego-palabras
+cd juego-palabras
+npm astro add vue
+npm astro add tailwind
+
+# O usando yarn
+yarn create astro juego-palabras
+cd juego-palabras
+yarn astro add vue
+yarn astro add tailwind
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+2. **Copia los archivos proporcionados en la estructura adecuada**
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Copia todos los archivos en la estructura de carpetas como se muestra a continuación:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
+```
+juego-palabras/
 ├── public/
+│   └── favicon.svg
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/
+│   │   ├── GameBoard.vue
+│   │   ├── GameOver.vue
+│   │   ├── ScoreBoard.vue
+│   │   └── StartScreen.vue
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   └── index.astro
+│   └── utils/
+│       └── gameLogic.js
+├── astro.config.mjs
+├── package.json
+├── tailwind.config.cjs
+└── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+3. **Ejecuta el proyecto**
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+# Usando npm
+npm run dev
 
-Any static assets, like images, can be placed in the `public/` directory.
+# O usando yarn
+yarn dev
+```
 
-## 🧞 Commands
+4. **Abre el navegador**
 
-All commands are run from the root of the project, from a terminal:
+Abre tu navegador en [http://localhost:4321](http://localhost:4321) para jugar.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Cómo jugar
 
-## 👀 Want to learn more?
+1. En la pantalla de inicio, selecciona el número de jugadores (1-4) y escribe sus nombres.
+2. Haz clic en "Iniciar Juego" para comenzar.
+3. En cada turno, debes formar una palabra utilizando las letras disponibles en el tablero.
+4. La palabra debe contener al menos la mitad de las letras mostradas.
+5. Después de enviar una palabra válida, las letras usadas se reemplazan y el juego pasa al siguiente jugador.
+6. Si no puedes formar una palabra, puedes saltar tu turno.
+7. El juego dura 4 rondas, y en cada ronda se añaden más letras al tablero.
+8. Gana el jugador que acumule más puntos al final del juego.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+¡Diviértete jugando!
